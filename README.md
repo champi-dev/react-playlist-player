@@ -77,15 +77,16 @@ render(<Demo />, document.querySelector('#demo'))
 
 ## Props
 
-| Prop | Type | Required | Description
-| currentPlayList | Object | true | An object containing the playlist data
-| albumCoverUrl | String | true | A path to the cover image (prop of currentPlayList)
-| albumName | String | true | Album name (prop of currentPlayList)
-| bandName | String | true | Band name (prop of currentPlayList)
-| songs | Array | true | Array of songs(objects) to be played (prop of currentPlayList)
-| position | String | true | Song's position in playlist (prop of songs)
-| songName | String | true | Song name (prop of songs)
-| songUrl | String | true | A path to the song (prop of songs)
+| Prop            |  Type  | Required | Description                                                    |
+| --------------- | :----: | -------- | -------------------------------------------------------------- |
+| currentPlayList | Object | true     | An object containing the playlist data                         |
+| albumCoverUrl   | String | true     | A path to the cover image (prop of currentPlayList)            |
+| albumName       | String | true     | Album name (prop of currentPlayList)                           |
+| bandName        | String | true     | Band name (prop of currentPlayList)                            |
+| songs           | Array  | true     | Array of songs(objects) to be played (prop of currentPlayList) |
+| position        | String | true     | Song's position in playlist (prop of songs)                    |
+| songName        | String | true     | Song name (prop of songs)                                      |
+| songUrl         | String | true     | A path to the song (prop of songs)                             |
 
 ## Exposed api
 
