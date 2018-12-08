@@ -4,7 +4,6 @@
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-Music player made with React16 and Mobx.
 [Open live demo](https://react-playlist-player.firebaseapp.com/)
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
