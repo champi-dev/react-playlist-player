@@ -101,11 +101,15 @@
       ]
     ]
   },
-  "author": "",
-  "homepage": "",
+  "author": "Daniel Sarmiento Cordero",
+  "homepage": "https://react-playlist-player.firebaseapp.com/",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/devsarmico/react-playlist-player",
   "keywords": [
-    "react-component"
+    "react-component",
+    "music",
+    "player",
+    "music player",
+    "playlist"
   ]
 }
