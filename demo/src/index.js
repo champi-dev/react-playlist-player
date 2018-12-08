@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { render } from 'react-dom'
 import '../../styles/index.sass'
 import './demo.sass'
-import AudioPlayer from '../../src/AudioPlayer/AudioPlayer'
+import AudioPlayer from '../../src/index'
 
 class Demo extends Component {
   state = {

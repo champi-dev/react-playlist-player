@@ -1,10 +1,11 @@
 import { shallow } from 'enzyme'
 import React from 'react'
-import AudioPlayer from './AudioPlayer'
+import AudioPlayer from './index'
 import store from './store/store'
 
 const currentPlayList = { bandName: 'test', songUrl: 'url', songs: [{}] }
-const createWrapper = () => shallow(<AudioPlayer currentPlayList={currentPlayList} />)
+const createWrapper = () =>
+  shallow(<AudioPlayer currentPlayList={currentPlayList} />)
 
 describe('AudioPlayer', () => {
   it('renders without crashing', () => {
@@ -27,15 +28,23 @@ describe('AudioPlayer', () => {
   describe('onPlaylistChanged', () => {
     it('sets store.state.currentPlaylist inside if branch', () => {
       const wrapper = createWrapper()
-      wrapper.instance().onPlaylistChanged({ currentPlayList: {} }, { ifBool: true })
-      expect(store.state.currentPlayList).toEqual({ bandName: 'test', songUrl: 'url', songs: [{}] })
+      wrapper
+        .instance()
+        .onPlaylistChanged({ currentPlayList: {} }, { ifBool: true })
+      expect(store.state.currentPlayList).toEqual({
+        bandName: 'test',
+        songUrl: 'url',
+        songs: [{}]
+      })
       store.state.currentPlayList = {}
       wrapper.unmount()
     })
 
     it('doesnt set store.state.currentPlaylist outside if branch', () => {
       const wrapper = createWrapper()
-      wrapper.instance().onPlaylistChanged({ currentPlayList: {} }, { ifBool: false })
+      wrapper
+        .instance()
+        .onPlaylistChanged({ currentPlayList: {} }, { ifBool: false })
       expect(store.state.currentPlayList).toEqual({})
       wrapper.unmount()
     })

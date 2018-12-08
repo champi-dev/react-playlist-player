@@ -6,7 +6,7 @@ import SongInfo from './SongInfo/SongInfo'
 import AudioControls from './AudioControls/AudioControls'
 import AudioProgress from './AudioProgress/AudioProgress'
 import isEqual from 'lodash/isEqual'
-import { testCond } from '../../utils/objectUtils'
+import { testCond } from '../utils/objectUtils'
 
 @observer
 class AudioPlayer extends Component {
@@ -15,7 +15,13 @@ class AudioPlayer extends Component {
   }
 
   onPlaylistChanged = (prevProps, testConfig = {}) => {
-    if (testCond(testConfig, 'ifBool', !isEqual(prevProps.currentPlayList, this.props.currentPlayList))) {
+    if (
+      testCond(
+        testConfig,
+        'ifBool',
+        !isEqual(prevProps.currentPlayList, this.props.currentPlayList)
+      )
+    ) {
       store.setAudio().setPlaylist(this.props.currentPlayList)
     }
   }
@@ -23,7 +29,11 @@ class AudioPlayer extends Component {
   render() {
     const SongInfoComponent = store.canPlay && <SongInfo />
     const AudioElement = (
-      <audio id="audio" onTimeUpdate={() => store.setProgress().set()} preload="auto">
+      <audio
+        id="audio"
+        onTimeUpdate={() => store.setProgress().set()}
+        preload="auto"
+      >
         <source src={store.state.currentSong.songUrl} type="audio/mp3" />
       </audio>
     )

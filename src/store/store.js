@@ -1,5 +1,5 @@
 import { observable, action, computed, reaction } from 'mobx'
-import { objectHasProps } from '../../../utils/objectUtils'
+import { objectHasProps } from '../../utils/objectUtils'
 import reactions from './reactions'
 import setAudio from './actions/setAudio'
 import setControls from './actions/setControls'
@@ -37,7 +37,10 @@ class Store {
     }
   }
   @computed get songAndPlaylistAreSetted() {
-    return objectHasProps(this.state.currentSong) && objectHasProps(this.state.currentPlayList)
+    return (
+      objectHasProps(this.state.currentSong) &&
+      objectHasProps(this.state.currentPlayList)
+    )
   }
 }
 

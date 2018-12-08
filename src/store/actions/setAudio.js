@@ -1,4 +1,4 @@
-import { objectHasProps } from '../../../../utils/objectUtils'
+import { objectHasProps } from '../../../utils/objectUtils'
 
 const setAudio = () =>
   function() {
@@ -6,7 +6,9 @@ const setAudio = () =>
       toggle: ({ shouldLoad } = {}) => {
         if (this.state.audioElement) {
           if (shouldLoad) this.setAudio().load()
-          this.state.audioPlaying ? this.setAudio().pause() : this.setAudio().play()
+          this.state.audioPlaying
+            ? this.setAudio().pause()
+            : this.setAudio().play()
         }
       },
 
@@ -37,19 +39,32 @@ const setAudio = () =>
 
       getVolume: () => this.state.audioElement.volume,
 
-      getDuration: () => (this.state.audioElement ? this.state.audioElement.duration : undefined),
+      getDuration: () =>
+        this.state.audioElement ? this.state.audioElement.duration : undefined,
 
-      getCurrentTime: () => (this.state.audioElement ? this.state.audioElement.currentTime : undefined),
+      getCurrentTime: () =>
+        this.state.audioElement
+          ? this.state.audioElement.currentTime
+          : undefined,
 
-      setCurrentTime: pos => (this.state.audioElement ? (this.state.audioElement.currentTime = pos) : ''),
+      setCurrentTime: pos =>
+        this.state.audioElement
+          ? (this.state.audioElement.currentTime = pos)
+          : '',
 
-      setElement: () => Promise.resolve((this.state.audioElement = document.getElementById('audio'))),
+      setElement: () =>
+        Promise.resolve(
+          (this.state.audioElement = document.getElementById('audio'))
+        ),
 
       setPlaylist: playlist => (this.state.currentPlayList = { ...playlist }),
 
       setSong: ({ arrIndex }) =>
         objectHasProps(this.state.currentPlayList) &&
-        (this.state.currentSong = { ...this.state.currentPlayList.songs[arrIndex], arrIndex }),
+        (this.state.currentSong = {
+          ...this.state.currentPlayList.songs[arrIndex],
+          arrIndex
+        }),
 
       setSongBy: by => {
         this.setAudio().setSong({
@@ -64,8 +79,11 @@ const setAudio = () =>
 
       setAndPlay: ({ shouldLoad } = {}) => {
         const saveIndex = () => {
-          const foundIndex = this.state.playedIndexes.find(i => i === this.state.currentSong.arrIndex)
-          if (foundIndex === undefined) this.state.playedIndexes.push(this.state.currentSong.arrIndex)
+          const foundIndex = this.state.playedIndexes.find(
+            i => i === this.state.currentSong.arrIndex
+          )
+          if (foundIndex === undefined)
+            this.state.playedIndexes.push(this.state.currentSong.arrIndex)
         }
 
         if (this.canPlay) {
