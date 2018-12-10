@@ -15,11 +15,7 @@
 
 ## Install
 
-```javascript
-  npm install react-playlist-player mobx mobx-react --save
-```
-
-You'll also need to install babel's plugin-proposal-class-properties and plugin-proposal-decorators
+[Installation of this package is temporarily unavailabe. I'm currently migrating the build step to use bitsrc.io instead]
 
 ## Usage
 
