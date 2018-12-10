@@ -1,7 +1,7 @@
 {
   "name": "react-playlist-player",
   "version": "1.0.1",
-  "description": "react-playlist-player React component",
+  "description": "Music player made with React16 and Mobx",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
