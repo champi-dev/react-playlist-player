@@ -1,8 +1,6 @@
 # react-playlist-player
 
-[![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
 
 [Open live demo](https://react-playlist-player.firebaseapp.com/)
 
