@@ -6,12 +6,15 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build_component'),
     filename: 'index.js',
-    libraryTarget: 'commonjs2'
+    library: 'react-playlist-player',
+    libraryTarget: 'umd'
   },
   module: {
     rules: rules
   },
   externals: {
-    react: 'commonjs react'
+    react: 'commonjs react',
+    mobx: 'mobx',
+    'mobx-react': 'mobx-react'
   }
 }

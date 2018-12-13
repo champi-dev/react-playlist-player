@@ -7,3 +7,7 @@
 npm-debug.log*
 .firebase/*
 \.firebase/
+/build_component
+/build_demo
+
+firebase\.json
