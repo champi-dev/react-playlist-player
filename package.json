@@ -6,7 +6,7 @@
   "homepage": "https://react-playlist-player.firebaseapp.com/",
   "license": "MIT",
   "repository": "https://github.com/devsarmico/react-playlist-player",
-  "main": "./build_component/index.js",
+  "main": "build_component/index.js",
   "keywords": [
     "react-component",
     "music",
