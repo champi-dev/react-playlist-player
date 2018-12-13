@@ -6,8 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build_component'),
     filename: 'index.js',
-    library: 'react-playlist-player',
-    libraryTarget: 'umd'
+    libraryTarget: 'commonjs2'
   },
   module: {
     rules: rules
