@@ -80,7 +80,7 @@ render(<Demo />, document.querySelector('#demo'))
 | albumName       | String | true     | Album name (prop of currentPlayList)                           |
 | bandName        | String | true     | Band name (prop of currentPlayList)                            |
 | songs           | Array  | true     | Array of songs(objects) to be played (prop of currentPlayList) |
-| position        | String | true     | Song's position in playlist (prop of songs)                    |
+| position        | String | false     | Song's position in playlist (prop of songs)                    |
 | songName        | String | true     | Song name (prop of songs)                                      |
 | songUrl         | String | true     | A path to the song (prop of songs)                             |
 
