@@ -13,7 +13,9 @@
 
 ## Install
 
-[Installation of this package is temporarily unavailabe. I'm currently migrating the build step to use bitsrc.io instead]
+```javascript
+  npm install react-playlist-player mobx mobx-react --save
+```
 
 ## Usage
 
