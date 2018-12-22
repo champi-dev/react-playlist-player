@@ -1,6 +1,8 @@
 # react-playlist-player
 
-[![npm package][npm-badge]][npm]
+[![npm version](https://badge.fury.io/js/react-playlist-player.svg)](https://badge.fury.io/js/react-playlist-player)
+[![Dependencies](https://david-dm.org/danielsarcor/react-playlist-player.svg)](https://david-dm.org/devsarmico/react-playlist-player)
+[![devDependencies Status](https://david-dm.org/devsarmico/react-playlist-player/dev-status.svg)](https://david-dm.org/devsarmico/react-playlist-player?type=dev)
 
 [Open live demo](https://react-playlist-player.firebaseapp.com/)
 
@@ -80,7 +82,7 @@ render(<Demo />, document.querySelector('#demo'))
 | albumName       | String | true     | Album name (prop of currentPlayList)                           |
 | bandName        | String | true     | Band name (prop of currentPlayList)                            |
 | songs           | Array  | true     | Array of songs(objects) to be played (prop of currentPlayList) |
-| position        | String | false     | Song's position in playlist (prop of songs)                    |
+| position        | String | false    | Song's position in playlist (prop of songs)                    |
 | songName        | String | true     | Song name (prop of songs)                                      |
 | songUrl         | String | true     | A path to the song (prop of songs)                             |
 
