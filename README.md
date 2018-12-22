@@ -1,5 +1,6 @@
 # react-playlist-player
 
+[![Build Status](https://travis-ci.org/devsarmico/react-playlist-player.svg?branch=master)](https://travis-ci.org/devsarmico/react-playlist-player)
 [![npm version](https://badge.fury.io/js/react-playlist-player.svg)](https://badge.fury.io/js/react-playlist-player)
 [![Dependencies](https://david-dm.org/danielsarcor/react-playlist-player.svg)](https://david-dm.org/devsarmico/react-playlist-player)
 [![devDependencies Status](https://david-dm.org/devsarmico/react-playlist-player/dev-status.svg)](https://david-dm.org/devsarmico/react-playlist-player?type=dev)
