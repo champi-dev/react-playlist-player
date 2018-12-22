@@ -13,6 +13,6 @@ before_install:
 install:
   - npm install
 script:
-  - npm build:component
+  - npm run build:component
   - npm test
   - npm run coveralls
