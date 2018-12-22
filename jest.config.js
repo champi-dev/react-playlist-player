@@ -8,5 +8,6 @@ module.exports = {
     '[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$',
     '^.+\\.module\\.(css|sass|scss)$'
   ],
-  setupTestFrameworkScriptFile: '<rootDir>setupEnzyme.js'
+  setupTestFrameworkScriptFile: '<rootDir>setupEnzyme.js',
+  coverageDirectory: '<rootDir>/tests/coverage'
 }
