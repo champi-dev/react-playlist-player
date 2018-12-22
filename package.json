@@ -22,7 +22,7 @@
     "build:demo": "webpack --config webpack.config.js --mode production",
     "build:component": "webpack --config webpack.config.component.js --mode production",
     "test": "jest",
-    "test:coverage": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "dependencies": {
     "mobx": "^5.7.0",
