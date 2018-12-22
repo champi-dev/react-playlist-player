@@ -4,6 +4,7 @@
 [![npm version](https://badge.fury.io/js/react-playlist-player.svg)](https://badge.fury.io/js/react-playlist-player)
 [![Dependencies](https://david-dm.org/danielsarcor/react-playlist-player.svg)](https://david-dm.org/devsarmico/react-playlist-player)
 [![devDependencies Status](https://david-dm.org/devsarmico/react-playlist-player/dev-status.svg)](https://david-dm.org/devsarmico/react-playlist-player?type=dev)
+[![Coverage Status](https://coveralls.io/repos/github/devsarmico/react-playlist-player/badge.svg?branch=master)](https://coveralls.io/github/devsarmico/react-playlist-player?branch=master)
 
 [Open live demo](https://react-playlist-player.firebaseapp.com/)
 
