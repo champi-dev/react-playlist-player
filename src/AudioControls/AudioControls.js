@@ -1,5 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react'
+import { objectHasProps } from '../../utils/objectUtils'
 import store from '../store/store'
 import './AudioControls.sass'
 import PlayerIcon from '../PlayerIcon/PlayerIcon'
@@ -20,7 +21,13 @@ export const repeatClasses = ({ repeat }) => {
   }
 }
 
-const AudioControls = observer(() => (
+const toggleHandler = () => {
+  if (objectHasProps(store.state.currentPlayList)) {
+    store.setAudio().toggle()
+  }
+}
+
+const AudioControls = observer((props) => (
   <div className={'icons'}>
     <PlayerIcon
       passClass={randomClasses(store.state)}
@@ -32,7 +39,7 @@ const AudioControls = observer(() => (
     <PlayerIcon
       passClass={playClasses(store.state)}
       icon={playClasses(store.state)}
-      onClick={() => store.setAudio().toggle()}
+      onClick={() => toggleHandler(props)}
     />
 
     <PlayerIcon passClass="forward" icon="forward" onClick={() => store.setControls().skipForward()} />

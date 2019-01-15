@@ -8,8 +8,17 @@ import AudioProgress from './AudioProgress/AudioProgress'
 import isEqual from 'lodash/isEqual'
 import { testCond } from '../utils/objectUtils'
 
+export const exportProps = {
+  onToggle: () => {}
+}
+
 @observer
 class AudioPlayer extends Component {
+  componentDidMount() {
+    const {onToggle} = this.props
+    if (onToggle) exportProps.onToggle = onToggle
+  }
+
   componentDidUpdate(prevProps) {
     this.onPlaylistChanged(prevProps)
   }
@@ -45,7 +54,7 @@ class AudioPlayer extends Component {
           <div className={'audio__controls'}>
             {SongInfoComponent}
             <div className={'group'}>
-              <AudioControls />
+              <AudioControls onToggle={this.props.onToggle}/>
               <AudioProgress />
             </div>
           </div>
@@ -56,5 +65,4 @@ class AudioPlayer extends Component {
 }
 
 export const toggleAudio = store.setAudio().toggle
-export const audioPlaying = () => store.state.audioPlaying
 export default AudioPlayer

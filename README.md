@@ -64,7 +64,7 @@ class Demo extends Component {
         <button className={'Demo__load-btn'} onClick={this.loadPlayList}>
           load playlist
         </button>
-        <AudioPlayer currentPlayList={this.state.currentPlayList} />
+        <AudioPlayer currentPlayList={this.state.currentPlayList} onToggle={({audioPlaying}) => console.log({audioPlaying})}/>
       </div>
     )
   }
@@ -77,6 +77,7 @@ render(<Demo />, document.querySelector('#demo'))
 
 | Prop            |  Type  | Required | Description                                                    |
 | --------------- | :----: | -------- | -------------------------------------------------------------- |
+| onToggle | Function | false     | A function to be excuted on audio toggle. It'll get passed {audioPlaying} as a parameter                         |
 | currentPlayList | Object | true     | An object containing the playlist data                         |
 | playlistCoverUrl | String | true     | A path to the cover image (prop of currentPlayList)            |
 | playlistName    | String | true     | Playlist name (prop of currentPlayList)                           |
@@ -88,8 +89,6 @@ render(<Demo />, document.querySelector('#demo'))
 
 ## Exposed api
 
-react-playlist-player exports two functions that relate to the playback:
-
 ### toggleAudio
 
 ```javascript
@@ -97,13 +96,4 @@ import { toggleAudio } from 'react-playlist-player'
 
 // Plays / pauses the audio
 toggleAudio()
-```
-
-### audioPlaying
-
-```javascript
-import { audioPlaying } from 'react-playlist-player'
-
-// Returns a boolean that indicates whether the audio is playing
-console.log(audioPlaying()) // true or false
 ```

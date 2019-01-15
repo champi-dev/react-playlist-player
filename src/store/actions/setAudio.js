@@ -1,4 +1,5 @@
 import { objectHasProps } from '../../../utils/objectUtils'
+import { exportProps } from '../../index'
 
 const setAudio = () =>
   function() {
@@ -6,9 +7,12 @@ const setAudio = () =>
       toggle: ({ shouldLoad } = {}) => {
         if (this.state.audioElement) {
           if (shouldLoad) this.setAudio().load()
+
           this.state.audioPlaying
             ? this.setAudio().pause()
             : this.setAudio().play()
+          
+          exportProps.onToggle({audioPlaying: this.state.audioPlaying})
         }
       },
 
@@ -90,8 +94,8 @@ const setAudio = () =>
           this.setAudio()
             .setElement()
             .then(() => {
-              this.setAudio().toggle({ shouldLoad })
               saveIndex()
+              this.setAudio().toggle({ shouldLoad })
             })
             .catch(e => e)
         }

@@ -1,6 +1,6 @@
 {
   "name": "react-playlist-player",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Music player made with React16 and Mobx",
   "author": "Daniel Sarmiento Cordero",
   "homepage": "https://react-playlist-player.firebaseapp.com/",

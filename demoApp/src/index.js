@@ -3,7 +3,6 @@ import { render } from 'react-dom'
 import '../../styles/index.sass'
 import './demo.sass'
 import AudioPlayer from '../../src/index'
-import { ReactComponent as GithubLogo } from './github-logo.svg'
 
 class Demo extends Component {
   state = {
@@ -58,7 +57,7 @@ class Demo extends Component {
         <button className={'Demo__load-btn'} onClick={this.loadPlayList}>
           load playlist
         </button>
-        <AudioPlayer currentPlayList={this.state.currentPlayList} />
+        <AudioPlayer currentPlayList={this.state.currentPlayList} onToggle={({audioPlaying}) => console.log({audioPlaying})}/>
       </div>
     )
   }
