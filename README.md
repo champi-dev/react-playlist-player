@@ -79,7 +79,7 @@ render(<Demo />, document.querySelector('#demo'))
 | --------------- | :----: | -------- | -------------------------------------------------------------- |
 | currentPlayList | Object | true     | An object containing the playlist data                         |
 | playlistCoverUrl | String | true     | A path to the cover image (prop of currentPlayList)            |
-| playlistName    | String | true     | Album name (prop of currentPlayList)                           |
+| playlistName    | String | true     | Playlist name (prop of currentPlayList)                           |
 | bandName        | String | true     | Band name (prop of currentPlayList)                            |
 | songs           | Array  | true     | Array of songs(objects) to be played (prop of currentPlayList) |
 | position        | String | false    | Song's position in playlist (prop of songs)                    |
