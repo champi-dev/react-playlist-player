@@ -6,7 +6,7 @@ import './SongInfo.sass'
 const SongInfo = observer(() => {
   return (
     <div className={'song-info'}>
-      <img className={'song-info__cover'} src={store.state.currentPlayList.albumCoverUrl} alt="cover" />
+      <img className={'song-info__cover'} src={store.state.currentPlayList.playlistCoverUrl} alt="cover" />
       <div className={'song-info__text'}>
         <span className={'title'}>{store.state.currentSong.songName}</span>
         <span className={'subtitle'}>{store.state.currentPlayList.bandName}</span>

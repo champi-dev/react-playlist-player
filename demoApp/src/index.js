@@ -13,7 +13,7 @@ class Demo extends Component {
   loadPlayList = () =>
     this.setState({
       currentPlayList: {
-        albumCoverUrl:
+        playlistCoverUrl:
           'https://images-na.ssl-images-amazon.com/images/I/81eaKFGNhSL._SL1500_.jpg',
         albumName: 'ten',
         bandName: 'pearl jam',

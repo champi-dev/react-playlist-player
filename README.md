@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/devsarmico/react-playlist-player.svg?branch=master)](https://travis-ci.org/devsarmico/react-playlist-player)
 [![npm version](https://badge.fury.io/js/react-playlist-player.svg)](https://badge.fury.io/js/react-playlist-player)
-[![Dependencies](https://david-dm.org/danielsarcor/react-playlist-player.svg)](https://david-dm.org/devsarmico/react-playlist-player)
-[![devDependencies Status](https://david-dm.org/devsarmico/react-playlist-player/dev-status.svg)](https://david-dm.org/devsarmico/react-playlist-player?type=dev)
 [![Coverage Status](https://coveralls.io/repos/github/devsarmico/react-playlist-player/badge.svg?branch=master)](https://coveralls.io/github/devsarmico/react-playlist-player?branch=master)
 
 [Open live demo](https://react-playlist-player.firebaseapp.com/)
@@ -36,8 +34,8 @@ class Demo extends Component {
   loadPlayList = () =>
     this.setState({
       currentPlayList: {
-        albumCoverUrl: 'path/to/coverUrl',
-        albumName: 'album name',
+        playlistCoverUrl: 'path/to/coverUrl',
+        playlistName: 'playlist name',
         bandName: 'band name',
         songs: [
           {
@@ -80,8 +78,8 @@ render(<Demo />, document.querySelector('#demo'))
 | Prop            |  Type  | Required | Description                                                    |
 | --------------- | :----: | -------- | -------------------------------------------------------------- |
 | currentPlayList | Object | true     | An object containing the playlist data                         |
-| albumCoverUrl   | String | true     | A path to the cover image (prop of currentPlayList)            |
-| albumName       | String | true     | Album name (prop of currentPlayList)                           |
+| playlistCoverUrl | String | true     | A path to the cover image (prop of currentPlayList)            |
+| playlistName    | String | true     | Album name (prop of currentPlayList)                           |
 | bandName        | String | true     | Band name (prop of currentPlayList)                            |
 | songs           | Array  | true     | Array of songs(objects) to be played (prop of currentPlayList) |
 | position        | String | false    | Song's position in playlist (prop of songs)                    |
