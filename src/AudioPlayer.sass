@@ -1,13 +1,13 @@
 @import '../styles/_variables.sass'
 $player-bg: lighten($bg-primary, 5%)
-  
+
 .audio__player
   position: fixed
   bottom: 0
   left: 0
   width: 100%
   background-color: $player-bg
-  
+
   & .audio__controls
     position: relative
     height: 2.5rem
@@ -27,21 +27,21 @@ $player-bg: lighten($bg-primary, 5%)
         width: 1.7rem
         height: 1.7rem
         transition: transform $transition-primary
-        &:hover
-          transform: scale(1.1)
-
-    & .backward, 
+        @media screen and (min-width: $mediumBreakPoint)
+          &:hover
+            transform: scale(1.1)
+    & .backward,
     & .forward
       svg
         width: 1rem
         height: 1rem
-    
+
     & .random,
     & .sync
       svg
         width: 0.8rem
         height: 0.8rem
-    
+
     & .volumeup,
     & .volumedown,
     & .volumeoff
