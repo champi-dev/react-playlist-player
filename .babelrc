@@ -1,9 +1,0 @@
-{
-  "presets": ["env", "react"],
-  "plugins": [
-    "transform-object-rest-spread",
-    "transform-react-jsx",
-    "transform-decorators-legacy",
-    "transform-class-properties"
-  ]
-}

@@ -1,0 +1,16 @@
+@import '../styles/_variables.scss';
+
+.icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media screen and (min-width: $mediumBreakPoint) {
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
