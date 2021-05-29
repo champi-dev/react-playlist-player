@@ -1,3 +1,5 @@
+> https://www.patreon.com/champipatreon
+
 > I'm not maintaining this project and also the current npm lib seems to be a bit broken
 
 > If you think that this project could help you, you're better of forking it
