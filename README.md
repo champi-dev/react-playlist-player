@@ -1,11 +1,5 @@
 > https://www.patreon.com/champipatreon
 
-> I'm not maintaining this project and also the current npm lib seems to be a bit broken
-
-> If you think that this project could help you, you're better of forking it
-
-> If you absolutely need this lib to work just leave me a comment and I'll fix what's missing
-
 # react-playlist-player
 
 [Open live demo](https://react-playlist-player.firebaseapp.com/)
@@ -13,7 +7,7 @@
 ## Install
 
 ```javascript
-  npm install react-playlist-player mobx mobx-react --save
+  npm install react-playlist-player mobx mobx-react --save // Work in progress - fixing it
 ```
 
 ## Usage
@@ -74,15 +68,15 @@ render(<Demo />, document.querySelector('#demo'))
 
 | Prop            |  Type  | Required | Description                                                    |
 | --------------- | :----: | -------- | -------------------------------------------------------------- |
-| onToggle | Function | false     | A function to be excuted on audio toggle. It'll get passed {audioPlaying} as an argument                         |
-| currentPlayList | Object | true     | An object containing the playlist data                         |
-| playlistCoverUrl | String | true     | A path to the cover image (prop of currentPlayList)            |
-| playlistName    | String | true     | Playlist name (prop of currentPlayList)                           |
-| bandName        | String | true     | Band name (prop of currentPlayList)                            |
-| songs           | Array  | true     | Array of songs(objects) to be played (prop of currentPlayList) |
-| position        | String | false    | Song's position in playlist (prop of songs)                    |
-| songName        | String | true     | Song name (prop of songs)                                      |
-| songUrl         | String | true     | A path to the song (prop of songs)                             |
+| onToggle | Function |     | A function to be excuted on audio toggle. It'll get passed {audioPlaying} as an argument                         |
+| currentPlayList | Object | *     | An object containing the playlist data                         |
+| playlistCoverUrl | String | *     | A path to the cover image (prop of currentPlayList)            |
+| playlistName    | String | *     | Playlist name (prop of currentPlayList)                           |
+| bandName        | String | *     | Band name (prop of currentPlayList)                            |
+| songs           | Array  | *     | Array of songs(objects) to be played (prop of currentPlayList) |
+| position        | String |     | Song's position in playlist (prop of songs)                    |
+| songName        | String | *     | Song name (prop of songs)                                      |
+| songUrl         | String | *     | A path to the song (prop of songs)                             |
 
 ## Exposed api
 
