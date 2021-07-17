@@ -20,7 +20,7 @@
     "url": "git+https://github.com/champi-dev/react-playlist-player"
   },
   "name": "react-playlist-player",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": false,
   "dependencies": {
     "@babel/cli": "^7.14.5",
