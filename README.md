@@ -1,91 +1,70 @@
-> https://www.patreon.com/champipatreon
+# Getting Started with Create React App
 
-# react-playlist-player
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[Open live demo](https://react-playlist-player.firebaseapp.com/)
+## Available Scripts
 
-## Install
+In the project directory, you can run:
 
-```javascript
-  npm install react-playlist-player mobx mobx-react --save
-```
+### `yarn start`
 
-## Usage
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```javascript
-import React, { Component } from 'react'
-import { render } from 'react-dom'
-import AudioPlayer from 'react-playlist-player'
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-class Demo extends Component {
-  state = {
-    currentPlayList: {}
-  }
+### `yarn test`
 
-  loadPlayList = () =>
-    this.setState({
-      currentPlayList: {
-        playlistCoverUrl: 'path/to/coverUrl',
-        playlistName: 'playlist name',
-        bandName: 'band name',
-        songs: [
-          {
-            position: '1',
-            songName: 'foo',
-            songUrl: 'path/to/songUrl'
-          },
-          {
-            position: '2',
-            songName: 'bar',
-            songUrl: 'path/to/songUrl'
-          },
-          {
-            position: '3',
-            songName: 'baz',
-            songUrl: 'path/to/songUrl'
-          }
-        ],
-        type: 'album'
-      }
-    })
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-  render() {
-    return (
-      <div className={'Demo'}>
-        <button className={'Demo__load-btn'} onClick={this.loadPlayList}>
-          load playlist
-        </button>
-        <AudioPlayer currentPlayList={this.state.currentPlayList} onToggle={({audioPlaying}) => console.log({audioPlaying})}/>
-      </div>
-    )
-  }
-}
+### `yarn build`
 
-render(<Demo />, document.querySelector('#demo'))
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Props
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-| Prop            |  Type  | Required | Description                                                    |
-| --------------- | :----: | -------- | -------------------------------------------------------------- |
-| onToggle | Function |     | A function to be excuted on audio toggle. It'll get passed {audioPlaying} as an argument                         |
-| onSongChanged | Function | | A function that is called when a song changes, receives {currentSong} as param |
-| currentPlayList | Object | *     | An object containing the playlist data                         |
-| playlistCoverUrl | String | *     | A path to the cover image (prop of currentPlayList)            |
-| playlistName    | String | *     | Playlist name (prop of currentPlayList)                           |
-| bandName        | String | *     | Band name (prop of currentPlayList)                            |
-| songs           | Array  | *     | Array of songs(objects) to be played (prop of currentPlayList) |
-| position        | String |     | Song's position in playlist (prop of songs)                    |
-| songName        | String | *     | Song name (prop of songs)                                      |
-| songUrl         | String | *     | A path to the song (prop of songs)                             |
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Exposed api
+### `yarn eject`
 
-### toggleAudio
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-```javascript
-import { toggleAudio } from 'react-playlist-player'
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-// Plays / pauses the audio
-toggleAudio()
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `yarn build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

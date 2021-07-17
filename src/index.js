@@ -1,72 +1,17 @@
-import React, { Component } from 'react'
-import { observer } from 'mobx-react'
-import store from './store/store'
-import './AudioPlayer.scss'
-import SongInfo from './SongInfo/SongInfo'
-import AudioControls from './AudioControls/AudioControls'
-import AudioProgress from './AudioProgress/AudioProgress'
-import isEqual from 'lodash/isEqual'
-import { testCond } from './utils/objectUtils'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-export const exportProps = {
-  onToggle: () => {},
-  onSongChanged: () => {}
-}
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-@observer
-class AudioPlayer extends Component {
-  componentDidMount() {
-    const {onToggle} = this.props
-    if (onToggle) exportProps.onToggle = onToggle
-
-    const {onSongChanged} = this.props
-    if (onSongChanged) exportProps.onSongChanged = onSongChanged
-  }
-
-  componentDidUpdate(prevProps) {
-    this.onPlaylistChanged(prevProps)
-  }
-
-  onPlaylistChanged = (prevProps, testConfig = {}) => {
-    if (
-      testCond(
-        testConfig,
-        'ifBool',
-        !isEqual(prevProps.currentPlayList, this.props.currentPlayList)
-      )
-    ) {
-      store.setAudio().setPlaylist(this.props.currentPlayList)
-    }
-  }
-
-  render() {
-    const SongInfoComponent = store.canPlay && <SongInfo />
-    const AudioElement = (
-      <audio
-        id="audio"
-        onTimeUpdate={() => store.setProgress().set()}
-        preload="auto"
-      >
-        <source src={store.state.currentSong.songUrl} type="audio/mp3" />
-      </audio>
-    )
-
-    return (
-      <div className={'audio'}>
-        <div id="audio__player" className={'audio__player'}>
-          {AudioElement}
-          <div className={'audio__controls'}>
-            {SongInfoComponent}
-            <div className={'group'}>
-              <AudioControls onToggle={this.props.onToggle}/>
-              <AudioProgress />
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-}
-
-export const toggleAudio = store.setAudio().toggle
-export default AudioPlayer
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

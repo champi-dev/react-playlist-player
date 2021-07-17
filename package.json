@@ -1,40 +1,35 @@
 {
-  "name": "react-playlist-player",
-  "version": "1.2.5",
-  "description": "A React component for playing playlists",
-  "author": "daniel sarmiento cordero",
-  "email": "champi@champi.io",
-  "license": "MIT",
-  "keywords": [
-    "react",
-    "components",
-    "ui",
-    "music"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/champi-dev/react-playlist-player"
-  },
-  "private": false,
+  "name": "test-lib",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "mobx": "^5.15.4",
-    "mobx-react": "^6.2.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^4.0.3"
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-playlist-player": "^1.2.5",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "@babel/plugin-syntax-jsx": "^7.14.5",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.14.7",
+    "@craco/craco": "^5.6.4",
+    "node-sass": "^6.0.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/ --out-dir dist --copy-files"
+    "start": "craco start"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -47,14 +42,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.14.5",
-    "@craco/craco": "^5.6.4",
-    "node-sass": "^6.0.1",
-    "@babel/cli": "^7.14.5",
-    "@babel/core": "^7.14.6",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.14.7"
   }
 }
