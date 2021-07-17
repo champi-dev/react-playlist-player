@@ -1,6 +1,6 @@
 {
   "name": "react-playlist-player",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "A React component for playing playlists",
   "author": "daniel sarmiento cordero",
   "email": "champi@champi.io",
@@ -11,10 +11,10 @@
     "ui",
     "music"
   ],
-  "main": "src/index.js",
-  "module": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
-    "src",
+    "dist",
     "README.md"
   ],
   "repository": {
@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build"
+    "build": "rm -rf dist && NODE_ENV=production babel src/ --out-dir dist --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
