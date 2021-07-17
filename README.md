@@ -10,6 +10,41 @@
   npm install react-playlist-player mobx mobx-react --save
 ```
 
+You'll also need the following devDependencies:
+
+```json
+"devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "@babel/plugin-syntax-jsx": "^7.14.5",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.14.7",
+    "@craco/craco": "^5.6.4",
+    "node-sass": "^6.0.1"
+  }
+```
+
+then update the scripts:
+
+```json
+"scripts": {
+    "start": "craco start",
+    "build": "craco build"
+  }
+```
+
+and add a craco.config.js at the root of your project:
+
+```javascript
+module.exports = {
+  reactScriptsVersion: "react-scripts",
+  babel: {
+    plugins: [["@babel/plugin-proposal-decorators", { legacy: true }]]
+  }
+};
+```
+
 ## Usage
 
 ```javascript
@@ -55,7 +90,10 @@ class Demo extends Component {
         <button className={'Demo__load-btn'} onClick={this.loadPlayList}>
           load playlist
         </button>
-        <AudioPlayer currentPlayList={this.state.currentPlayList} onToggle={({audioPlaying}) => console.log({audioPlaying})}/>
+        <AudioPlayer currentPlayList={this.state.currentPlayList} 
+          onToggle={({audioPlaying}) => console.log({audioPlaying})}
+          onSongChanged={({currentSong}) => {console.log(currentSong)}}
+        />
       </div>
     )
   }
