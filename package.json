@@ -9,10 +9,10 @@
     "ui",
     "music"
   ],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "build/static/js/runtime-main.b385363a.js",
+  "module": "build/static/js/runtime-main.b385363a.js",
   "files": [
-    "dist",
+    "build",
     "README.md"
   ],
   "repository": {
@@ -20,7 +20,7 @@
     "url": "git+https://github.com/champi-dev/react-playlist-player"
   },
   "name": "react-playlist-player",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "private": false,
   "dependencies": {
     "@babel/cli": "^7.14.5",
@@ -35,7 +35,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files"
+    "build": "craco build"
   },
   "eslintConfig": {
     "extends": "react-app"
