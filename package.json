@@ -1,8 +1,32 @@
 {
-  "name": "cra",
-  "version": "0.1.0",
-  "private": true,
+  "description": "A React component for playing playlists",
+  "author": "daniel sarmiento cordero",
+  "email": "champi@champi.io",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "components",
+    "ui",
+    "music"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/champi-dev/react-playlist-player"
+  },
+  "name": "react-playlist-player",
+  "version": "1.2.0",
+  "private": false,
   "dependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.14.7",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
     "react": "^16.13.1",
@@ -11,7 +35,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build"
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,7 +53,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.10.1",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
     "@craco/craco": "^5.6.4",
     "node-sass": "^4.14.1"
   }
