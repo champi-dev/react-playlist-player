@@ -1,0 +1,66 @@
+@import "./styles/_variables.scss";
+$player-bg: lighten($bg-primary, 5%);
+
+.audio__player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $player-bg;
+
+  & .audio__controls {
+    position: relative;
+    height: 2.5rem;
+    @media screen and (min-width: $mediumBreakPoint) {
+      height: 5rem;
+    }
+  }
+
+  & .group {
+    @media screen and (min-width: $mediumBreakPoint) {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    & .play,
+    & .pause {
+      svg {
+        width: 1.7rem;
+        height: 1.7rem;
+        transition: transform $transition-primary;
+        @media screen and (min-width: $mediumBreakPoint) {
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    & .backward,
+    & .forward {
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    & .random,
+    & .sync {
+      svg {
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+    }
+
+    & .volumeup,
+    & .volumedown,
+    & .volumeoff {
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@
 ## Install
 
 ```javascript
-  npm install react-playlist-player mobx mobx-react --save // Work in progress - fixing it
+  npm install react-playlist-player mobx mobx-react --save
 ```
 
 ## Usage
