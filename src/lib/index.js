@@ -9,7 +9,8 @@ import isEqual from 'lodash/isEqual'
 import { testCond } from './utils/objectUtils'
 
 export const exportProps = {
-  onToggle: () => {}
+  onToggle: () => {},
+  onSongChanged: () => {}
 }
 
 @observer
@@ -17,6 +18,9 @@ class AudioPlayer extends Component {
   componentDidMount() {
     const {onToggle} = this.props
     if (onToggle) exportProps.onToggle = onToggle
+
+    const {onSongChanged} = this.props
+    if (onSongChanged) exportProps.onSongChanged = onSongChanged
   }
 
   componentDidUpdate(prevProps) {

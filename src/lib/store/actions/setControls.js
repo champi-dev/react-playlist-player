@@ -1,3 +1,5 @@
+import { exportProps } from '../../index'
+
 const setControls = () =>
   function() {
     return {
@@ -34,7 +36,7 @@ const setControls = () =>
           if (this.state.backwardTimes === this.state.playedIndexes.length - 1) {
             this.state.backwardTimes = 0
             this.state.playedIndexes = []
-          }
+          }        
         }
       },
 
@@ -58,6 +60,7 @@ const setControls = () =>
           this.setAudio().resetPlay()
           skipFn()
           this.setAudio().setAndPlay({ shouldLoad: true })
+          exportProps.onSongChanged({currentSong: this.state.currentSong})
         }
 
         if (this.songAndPlaylistAreSetted) {

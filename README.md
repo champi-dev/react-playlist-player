@@ -69,6 +69,7 @@ render(<Demo />, document.querySelector('#demo'))
 | Prop            |  Type  | Required | Description                                                    |
 | --------------- | :----: | -------- | -------------------------------------------------------------- |
 | onToggle | Function |     | A function to be excuted on audio toggle. It'll get passed {audioPlaying} as an argument                         |
+| onSongChanged | Function | | A function that is called when a song changes, receives {currentSong} as param |
 | currentPlayList | Object | *     | An object containing the playlist data                         |
 | playlistCoverUrl | String | *     | A path to the cover image (prop of currentPlayList)            |
 | playlistName    | String | *     | Playlist name (prop of currentPlayList)                           |

@@ -56,7 +56,16 @@ class Demo extends Component {
         <button className={'Demo__load-btn'} onClick={this.loadPlayList}>
           load playlist
         </button>
-        <AudioPlayer currentPlayList={this.state.currentPlayList} onToggle={({audioPlaying}) => console.log({audioPlaying})}/>
+        <AudioPlayer 
+        currentPlayList={this.state.currentPlayList}
+         onToggle={({audioPlaying}) => console.log({audioPlaying})} 
+         onSongChanged={({currentSong}) => console.log({
+           arrIndex: currentSong.arrIndex,
+           position: currentSong.position,
+           songName: currentSong.songName,
+           songUrl: currentSong.songUrl
+          })}
+         />
       </div>
     )
   }
