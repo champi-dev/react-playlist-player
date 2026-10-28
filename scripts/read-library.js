@@ -4,8 +4,33 @@ const path = require('path')
 const AUDIO_EXT = new Set(['.mp3', '.wav', '.ogg', '.oga', '.m4a', '.aac', '.flac'])
 const COVER_EXT = ['.jpg', '.jpeg', '.png', '.webp']
 const ROOT = process.cwd()
-const MUSIC_ROOT = path.join(ROOT, 'music')
 const HOSTED_FILE = path.join(ROOT, 'hosted-playlists.json')
+
+function isDirectory(dir) {
+  try {
+    return fs.statSync(dir).isDirectory()
+  } catch (error) {
+    return false
+  }
+}
+
+// Checkouts keep the committed Music/ name. macOS treats that as music/; Linux does not.
+function resolveMusicRoot(start = ROOT) {
+  const preferred = path.join(start, 'music')
+  let names
+  try {
+    names = fs.readdirSync(start)
+  } catch (error) {
+    return preferred
+  }
+
+  const exact = names.find(name => name === 'music' && isDirectory(path.join(start, name)))
+  if (exact) return path.join(start, exact)
+  const folded = names.find(name => name.toLowerCase() === 'music' && isDirectory(path.join(start, name)))
+  return folded ? path.join(start, folded) : preferred
+}
+
+const MUSIC_ROOT = resolveMusicRoot(ROOT)
 
 function cleanLabel(value) {
   return String(value || '')
@@ -208,4 +233,4 @@ function readLibrary(options = {}) {
   return { playlists: listed.concat(readHostedPlaylists(hostedFile)) }
 }
 
-module.exports = { readLibrary, MUSIC_ROOT }
+module.exports = { readLibrary, resolveMusicRoot, MUSIC_ROOT }

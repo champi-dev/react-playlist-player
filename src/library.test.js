@@ -4,7 +4,7 @@ import path from 'path'
 import { createRequire } from 'module'
 
 const require = createRequire(import.meta.url)
-const { readLibrary } = require('../scripts/read-library')
+const { readLibrary, resolveMusicRoot } = require('../scripts/read-library')
 const { writeLibrary, runCli } = require('../scripts/write-library')
 const { audioMimeType, resolveMediaSrc } = require('./utils/mediaSrc')
 const { formatTime } = require('./utils/formatTime')
@@ -194,6 +194,19 @@ describe('readLibrary', () => {
     writeLibrary(destination)
     const written = JSON.parse(fs.readFileSync(destination, 'utf8'))
     expect(written.playlists.length).toBeGreaterThan(0)
+  })
+
+  test('reads a Music directory when the checkout keeps that case', () => {
+    const start = path.join(root, 'case-root')
+    fs.mkdirSync(path.join(start, 'Music', 'Jazz'), { recursive: true })
+    silentMp3(path.join(start, 'Music', 'Jazz', 'Ada - One.mp3'))
+    const found = resolveMusicRoot(start)
+    expect(path.basename(found)).toBe('Music')
+    const { playlists } = readLibrary({
+      musicRoot: found,
+      hostedFile: path.join(start, 'missing.json')
+    })
+    expect(playlists.map(playlist => playlist.name)).toEqual(['Jazz'])
   })
 
   test('publishes only the folders asked for', () => {

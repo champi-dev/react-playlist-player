@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const { readLibrary } = require('./read-library')
+const { readLibrary, MUSIC_ROOT } = require('./read-library')
 
 function parseArgs(argv, env) {
   const includeAt = argv.indexOf('--include')
@@ -37,9 +37,9 @@ function copyFolders(musicRoot, copyTo, includeFolders) {
 }
 
 function writeLibrary(destination = path.join(process.cwd(), 'public', 'library.json'), options = {}) {
-  const musicRoot = options.musicRoot || path.join(process.cwd(), 'music')
+  const musicRoot = options.musicRoot || MUSIC_ROOT
   const library = readLibrary({
-    musicRoot: options.musicRoot,
+    musicRoot,
     hostedFile: options.hostedFile
   })
 
