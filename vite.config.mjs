@@ -188,8 +188,10 @@ export default defineConfig({
     strictPort: true
   },
   preview: {
-    port: 3000,
-    strictPort: true
+    host: true,
+    port: Number(process.env.PORT) || 3000,
+    strictPort: true,
+    allowedHosts: ['.onrender.com']
   },
   build: {
     outDir: 'dist',
