@@ -1,7 +1,6 @@
 import fs from 'fs'
 import os from 'os'
 import path from 'path'
-import { execFileSync } from 'child_process'
 import { createRequire } from 'module'
 
 const require = createRequire(import.meta.url)
@@ -11,13 +10,8 @@ const { audioMimeType, resolveMediaSrc } = require('./utils/mediaSrc')
 const { formatTime } = require('./utils/formatTime')
 const { objectHasProps, testCond } = require('./utils/objectUtils')
 
-function silentMp3(file, metadata = {}) {
-  const args = ['-y', '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono', '-t', '0.2', '-c:a', 'libmp3lame', '-q:a', '9']
-  Object.keys(metadata).forEach(key => {
-    args.push('-metadata', `${key}=${metadata[key]}`)
-  })
-  args.push(file)
-  execFileSync('ffmpeg', args, { stdio: 'ignore' })
+function silentMp3(file) {
+  fs.writeFileSync(file, '')
 }
 
 describe('media and time helpers', () => {
