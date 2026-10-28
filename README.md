@@ -21,7 +21,7 @@ You'll also need the following devDependencies:
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.14.7",
     "@craco/craco": "^5.6.4",
-    "node-sass": "^6.0.1"
+    "sass": "^1.79.6"
   }
 ```
 

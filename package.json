@@ -23,6 +23,7 @@
   },
   "private": false,
   "dependencies": {
+    "firebase": "^13.1.0",
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
     "react": "^16.13.1",
@@ -30,11 +31,9 @@
     "react-scripts": "^4.0.3"
   },
   "scripts": {
-    "start": "NODE_OPTIONS=--openssl-legacy-provider craco start",
-    "build": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --copy-files --ignore src/demo",
-    "build:app": "NODE_OPTIONS=--openssl-legacy-provider craco build && node scripts/write-library.js --include Balada,Merengue,Reggaeton,Salsa,Vallenato --out build/library.json --copy build",
-    "test": "craco test --watchAll=false --coverage --coverageReporters=text-summary --coverageReporters=text",
-    "e2e": "playwright test"
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,15 +52,22 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.14.5",
-    "@babel/core": "^7.14.6",
-    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "@babel/core": "^7.29.7",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.29.7",
+    "@babel/plugin-transform-runtime": "^7.29.7",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.14.7",
-    "@craco/craco": "^5.6.4",
+    "@babel/preset-react": "^7.29.7",
+    "@babel/runtime": "^7.29.7",
     "@playwright/test": "^1.48.2",
+    "@rolldown/plugin-babel": "^0.2.4",
     "@testing-library/react": "^12.1.5",
-    "node-sass": "^6.0.1",
-    "sass": "^1.79.6"
+    "@vitejs/plugin-react": "^6.1.2",
+    "jsdom": "^30.1.3",
+    "sass": "^1.79.6",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
   },
   "jest": {
     "collectCoverageFrom": [

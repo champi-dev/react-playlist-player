@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { render } from 'react-dom'
 import AudioPlayer from '../index'
 import { formatTime } from '../utils/formatTime'
 import { resolveMediaSrc } from '../utils/mediaSrc'
@@ -322,7 +323,6 @@ export class Library extends Component {
 }
 
 export function mountLibrary(node = document.getElementById('root')) {
-  const { render } = require('react-dom')
   if (!node) return null
   return render(<Library />, node)
 }

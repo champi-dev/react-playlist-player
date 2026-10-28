@@ -2,7 +2,9 @@ import fs from 'fs'
 import os from 'os'
 import path from 'path'
 import { execFileSync } from 'child_process'
+import { createRequire } from 'module'
 
+const require = createRequire(import.meta.url)
 const { readLibrary } = require('../scripts/read-library')
 const { writeLibrary, runCli } = require('../scripts/write-library')
 const { audioMimeType, resolveMediaSrc } = require('./utils/mediaSrc')
