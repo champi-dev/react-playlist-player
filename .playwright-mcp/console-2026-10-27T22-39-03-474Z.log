@@ -1,0 +1,5 @@
+[     562ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:42608
+[   30795ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:42608
+[   65515ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:42608
+[ 1510254ms] [INFO] The development server has disconnected.
+Refresh the page if necessary. @ http://localhost:3000/static/js/vendors~main.chunk.js:9402

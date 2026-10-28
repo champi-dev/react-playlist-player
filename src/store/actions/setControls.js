@@ -28,16 +28,15 @@ const setControls = () =>
       },
 
       skipBackward: () => {
-        if (this.state.playedIndexes.length > 1) {
-          this.state.backwardTimes += 1
-          this.setControls().skipSong({
-            to: this.state.playedIndexes[this.state.playedIndexes.length - this.state.backwardTimes - 1]
-          })
-          if (this.state.backwardTimes === this.state.playedIndexes.length - 1) {
-            this.state.backwardTimes = 0
-            this.state.playedIndexes = []
-          }        
+        const element = this.state.audioElement
+        const time = element && Number.isFinite(element.currentTime) ? element.currentTime : 0
+        if (time > 2) {
+          this.setAudio().setCurrentTime(0)
+          this.setProgress().set('0%')
+          return
         }
+        const index = this.state.currentSong && this.state.currentSong.arrIndex
+        if (typeof index === 'number' && index > 0) this.setControls().skipSong({ to: index - 1 })
       },
 
       skipForward: () => {
@@ -57,9 +56,16 @@ const setControls = () =>
 
       skipSong: ({ by, to } = {}) => {
         const skipper = skipFn => {
-          this.setAudio().resetPlay()
+          // Swap the file and start it in this turn. Pausing first, or waiting
+          // for a microtask, leaves a gap before the next bytes are requested.
+          this.setProgress().set('0%')
           skipFn()
-          this.setAudio().setAndPlay({ shouldLoad: true })
+          const index = this.state.currentSong && this.state.currentSong.arrIndex
+          if (index !== undefined && this.state.playedIndexes.find(i => i === index) === undefined) {
+            this.state.playedIndexes.push(index)
+          }
+          if (this.state.audioElement) this.setAudio().play()
+          else this.setAudio().setAndPlay()
           exportProps.onSongChanged({currentSong: this.state.currentSong})
         }
 

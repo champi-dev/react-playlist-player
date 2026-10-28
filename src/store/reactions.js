@@ -2,7 +2,9 @@ const reactions = store => [
   {
     data: () => store.state.currentPlayList,
     effect: () => {
-      store.setAudio().playFromTop({ auto: true })
+      const arrIndex = Number.isInteger(store.startIndex) ? store.startIndex : 0
+      store.startIndex = null
+      store.setAudio().playFromTop({ auto: true, arrIndex })
     }
   },
 

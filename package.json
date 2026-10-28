@@ -30,8 +30,11 @@
     "react-scripts": "^4.0.3"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/ --out-dir dist --copy-files"
+    "start": "NODE_OPTIONS=--openssl-legacy-provider craco start",
+    "build": "rm -rf dist && NODE_ENV=production babel src --out-dir dist --copy-files --ignore src/demo",
+    "build:app": "NODE_OPTIONS=--openssl-legacy-provider craco build && node scripts/write-library.js --include Balada,Merengue,Reggaeton,Salsa,Vallenato --out build/library.json --copy build",
+    "test": "craco test --watchAll=false --coverage --coverageReporters=text-summary --coverageReporters=text",
+    "e2e": "playwright test"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,12 +52,28 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-decorators": "^7.14.5",
-    "@craco/craco": "^5.6.4",
-    "node-sass": "^6.0.1",
     "@babel/cli": "^7.14.5",
     "@babel/core": "^7.14.6",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
     "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.14.7"
+    "@babel/preset-env": "^7.14.7",
+    "@craco/craco": "^5.6.4",
+    "@playwright/test": "^1.48.2",
+    "@testing-library/react": "^12.1.5",
+    "node-sass": "^6.0.1",
+    "sass": "^1.79.6"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "scripts/**/*.js",
+      "!src/**/*.test.js",
+      "!src/setupTests.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 100
+      }
+    }
   }
 }

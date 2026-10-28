@@ -1,0 +1,99 @@
+- generic [ref=e3]:
+  - navigation "Categories" [ref=e4]:
+    - button "Everything 76 songs" [ref=e5] [cursor=pointer]:
+      - generic [ref=e6]:
+        - generic [ref=e7]: Everything
+        - generic [ref=e8]: 76 songs
+    - button "Classic Rock 15 songs" [ref=e9] [cursor=pointer]:
+      - generic [ref=e10]:
+        - generic [ref=e11]: Classic Rock
+        - generic [ref=e12]: 15 songs
+    - button "Deep House 3 playlists" [ref=e13] [cursor=pointer]:
+      - generic [ref=e14]:
+        - generic [ref=e15]: Deep House
+        - generic [ref=e16]: 3 playlists
+    - button "Demo 1 song" [ref=e17] [cursor=pointer]:
+      - generic [ref=e18]:
+        - generic [ref=e19]: Demo
+        - generic [ref=e20]: 1 song
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - heading "Classic Rock" [level=1] [ref=e23]
+      - paragraph [ref=e24]: 15 songs
+    - list [ref=e25]:
+      - listitem [ref=e26]:
+        - button "Back in Black ACDC 4:08" [ref=e27] [cursor=pointer]:
+          - generic [ref=e29]: Back in Black
+          - generic [ref=e30]: ACDC
+          - generic [ref=e31]: 4:08
+      - listitem [ref=e32]:
+        - button "Feel Like Makin' Love Bad Company 5:17" [ref=e33] [cursor=pointer]:
+          - generic [ref=e35]: Feel Like Makin' Love
+          - generic [ref=e36]: Bad Company
+          - generic [ref=e37]: 5:17
+      - listitem [ref=e38]:
+        - button "More Than A Feeling Boston 4:47" [ref=e39] [cursor=pointer]:
+          - generic [ref=e41]: More Than A Feeling
+          - generic [ref=e42]: Boston
+          - generic [ref=e43]: 4:47
+      - listitem [ref=e44]:
+        - button "Sunshine of Your Love Cream 4:13" [ref=e45] [cursor=pointer]:
+          - generic [ref=e47]: Sunshine of Your Love
+          - generic [ref=e48]: Cream
+          - generic [ref=e49]: 4:13
+      - listitem [ref=e50]:
+        - button "White Room Cream/Eric Clapton 4:57" [ref=e51] [cursor=pointer]:
+          - generic [ref=e53]: White Room
+          - generic [ref=e54]: Cream/Eric Clapton
+          - generic [ref=e55]: 4:57
+      - listitem [ref=e56]:
+        - button "Space Oddity David Bowie 4:48" [ref=e57] [cursor=pointer]:
+          - generic [ref=e59]: Space Oddity
+          - generic [ref=e60]: David Bowie
+          - generic [ref=e61]: 4:48
+      - listitem [ref=e62]:
+        - button "ZIGGY STARDUST DAVID BOWIE 3:12" [ref=e63] [cursor=pointer]:
+          - generic [ref=e65]: ZIGGY STARDUST
+          - generic [ref=e66]: DAVID BOWIE
+          - generic [ref=e67]: 3:12
+      - listitem [ref=e68]:
+        - button "Layla Derek and the Dominos 7:02" [ref=e69] [cursor=pointer]:
+          - generic [ref=e71]: Layla
+          - generic [ref=e72]: Derek and the Dominos
+          - generic [ref=e73]: 7:02
+      - listitem [ref=e74]:
+        - button "Barracuda Heart 4:25" [ref=e75] [cursor=pointer]:
+          - generic [ref=e77]: Barracuda
+          - generic [ref=e78]: Heart
+          - generic [ref=e79]: 4:25
+      - listitem [ref=e80]:
+        - button "Purple Haze Jimi Hendrix 2:43" [ref=e81] [cursor=pointer]:
+          - generic [ref=e83]: Purple Haze
+          - generic [ref=e84]: Jimi Hendrix
+          - generic [ref=e85]: 2:43
+      - listitem [ref=e86]:
+        - button "Black Dog Led Zeppelin 4:58" [ref=e87] [cursor=pointer]:
+          - generic [ref=e89]: Black Dog
+          - generic [ref=e90]: Led Zeppelin
+          - generic [ref=e91]: 4:58
+      - listitem [ref=e92]:
+        - button "Rock Me Baby ROLLING STONES and AC/DC 6:21" [ref=e93] [cursor=pointer]:
+          - generic [ref=e95]: Rock Me Baby
+          - generic [ref=e96]: ROLLING STONES and AC/DC
+          - generic [ref=e97]: 6:21
+      - listitem [ref=e98]:
+        - button "Cum On Feel The Noize Slade 4:21" [ref=e99] [cursor=pointer]:
+          - generic [ref=e101]: Cum On Feel The Noize
+          - generic [ref=e102]: Slade
+          - generic [ref=e103]: 4:21
+      - listitem [ref=e104]:
+        - button "My Sharona The Knack 4:50" [ref=e105] [cursor=pointer]:
+          - generic [ref=e107]: My Sharona
+          - generic [ref=e108]: The Knack
+          - generic [ref=e109]: 4:50
+      - listitem [ref=e110]:
+        - button "Start Me Up The Rolling Stones 3:32" [ref=e111] [cursor=pointer]:
+          - generic [ref=e113]: Start Me Up
+          - generic [ref=e114]: The Rolling Stones
+          - generic [ref=e115]: 3:32
+  - generic: 0:00

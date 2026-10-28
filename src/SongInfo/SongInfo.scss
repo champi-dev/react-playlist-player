@@ -2,45 +2,54 @@
 
 .song-info {
   z-index: 2;
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: $horizontalSpace;
-  transform: translateY(-50%);
-  @media screen and (min-width: $mediumBreakPoint) {
-    display: block;
-    left: $horizontalSpaceLarge;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+  position: static;
+  transform: none;
+
+  &__cover,
+  &__mark {
+    height: 2.75rem;
+    width: 2.75rem;
+    border-radius: 8px;
+    flex: 0 0 auto;
   }
   &__cover {
-    height: 3.5rem;
-    width: 3.5rem;
-    box-shadow: $shadowMainBox;
-    display: inline-block;
-    vertical-align: middle;
     object-fit: cover;
+    display: block;
+  }
+  &__mark {
+    display: grid;
+    place-items: center;
+    background: $bg-grouped;
+    color: $text;
+    font-family: $font;
+    font-size: 1rem;
+    font-weight: 600;
   }
   &__text {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left: 0.5rem;
+    min-width: 0;
     & .title,
     & .subtitle {
       cursor: default;
       display: block;
-      text-transform: capitalize;
-      &:hover {
-        color: $text;
-        text-decoration: underline;
-      }
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     & .title {
       color: $text;
-      font-size: 0.8rem;
-      line-height: 1.7;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
     }
     & .subtitle {
       color: $text-secondary;
-      font-size: 0.65rem;
+      font-size: 0.78rem;
+      line-height: 1.3;
     }
   }
 }

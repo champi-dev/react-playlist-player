@@ -67,17 +67,15 @@ class Demo extends Component {
           {
             position: '1',
             songName: 'foo',
-            songUrl: 'path/to/songUrl'
+            artist: 'someone',
+            songUrl: '/music/Jazz/foo.mp3',
+            coverUrl: '/music/Jazz/foo.jpg'
           },
           {
             position: '2',
             songName: 'bar',
-            songUrl: 'path/to/songUrl'
-          },
-          {
-            position: '3',
-            songName: 'baz',
-            songUrl: 'path/to/songUrl'
+            songUrl: 'https://example.com/audio/bar.mp3',
+            coverUrl: 'https://example.com/covers/bar.jpg'
           }
         ],
         type: 'album'
@@ -90,7 +88,8 @@ class Demo extends Component {
         <button className={'Demo__load-btn'} onClick={this.loadPlayList}>
           load playlist
         </button>
-        <AudioPlayer currentPlayList={this.state.currentPlayList} 
+        <AudioPlayer currentPlayList={this.state.currentPlayList}
+          activeSongIndex={0}
           onToggle={({audioPlaying}) => console.log({audioPlaying})}
           onSongChanged={({currentSong}) => {console.log(currentSong)}}
         />
@@ -102,6 +101,33 @@ class Demo extends Component {
 render(<Demo />, document.querySelector('#demo'))
 ```
 
+`songUrl` and `coverUrl` accept either kind of address:
+
+- A hosted link, such as `https://example.com/audio/bar.mp3`
+- A file in this project. Put audio in a folder under `music/`. A folder of songs is a category and a playlist (`music/Classic_Rock`, `music/Jazz`). A folder of folders is a category whose subfolders are playlists (`music/Deep_House/Anthems_CD1`). A cover image with the same name as the track, or `cover.jpg` in the folder, is used for that song.
+
+`npm start` reads those folders and lists every song. An empty folder is a category waiting for files. Audio is requested only after you press a song. Link playlists go in `hosted-playlists.json`:
+
+```json
+{
+  "playlists": [
+    {
+      "name": "Night Drive",
+      "bandName": "Various",
+      "playlistCoverUrl": "https://example.com/covers/night.jpg",
+      "songs": [
+        {
+          "songName": "Harbor",
+          "artist": "Field Notes",
+          "songUrl": "https://example.com/audio/harbor.mp3",
+          "coverUrl": "https://example.com/covers/harbor.jpg"
+        }
+      ]
+    }
+  ]
+}
+```
+
 ## Props
 
 | Prop            |  Type  | Required | Description                                                    |
@@ -109,13 +135,16 @@ render(<Demo />, document.querySelector('#demo'))
 | onToggle | Function |     | A function to be excuted on audio toggle. It'll get passed {audioPlaying} as an argument                         |
 | onSongChanged | Function | | A function that is called when a song changes, receives {currentSong} as param |
 | currentPlayList | Object | *     | An object containing the playlist data                         |
-| playlistCoverUrl | String | *     | A path to the cover image (prop of currentPlayList)            |
+| playlistCoverUrl | String | *     | Cover used when a song has no coverUrl. Hosted URL or a file in this project |
 | playlistName    | String | *     | Playlist name (prop of currentPlayList)                           |
 | bandName        | String | *     | Band name (prop of currentPlayList)                            |
 | songs           | Array  | *     | Array of songs(objects) to be played (prop of currentPlayList) |
 | position        | String |     | Song's position in playlist (prop of songs)                    |
 | songName        | String | *     | Song name (prop of songs)                                      |
-| songUrl         | String | *     | A path to the song (prop of songs)                             |
+| artist          | String |     | Shown under the title. Falls back to bandName                  |
+| songUrl         | String | *     | Hosted audio URL, or a file path such as /music/Jazz/foo.mp3   |
+| coverUrl        | String |     | Cover for this song. Same kind of address as songUrl           |
+| activeSongIndex | Number |     | Song to start when the playlist loads. First song when omitted |
 
 ## Exposed api
 

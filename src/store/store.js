@@ -7,6 +7,7 @@ import setProgress from './actions/setProgress'
 
 class Store {
   constructor() {
+    this.startIndex = null
     reactions(this).forEach(r => reaction(r.data, r.effect))
   }
 
@@ -14,6 +15,7 @@ class Store {
     audioElement: undefined,
     audioVolume: 1,
     audioProgress: '0%',
+    scrubbing: false,
     audioPlaying: false,
     randomize: false,
     repeat: 'off',

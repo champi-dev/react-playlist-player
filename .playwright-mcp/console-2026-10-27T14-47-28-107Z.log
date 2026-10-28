@@ -1,0 +1,28 @@
+[    1228ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:45838
+[ 8894784ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:45838
+[ 9120356ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:45838
+[ 9376744ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:45838
+[10119688ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:45838
+[10253050ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:45838
+[10472065ms] Error: The error you provided does not contain a stack trace.
+    at L (http://localhost:3000/static/js/vendors~main.chunk.js:39302:13)
+    at Y (http://localhost:3000/static/js/vendors~main.chunk.js:39609:15)
+    at http://localhost:3000/static/js/vendors~main.chunk.js:39624:9
+    at http://localhost:3000/static/js/vendors~main.chunk.js:39643:16
+    at l (http://localhost:3000/static/js/vendors~main.chunk.js:39123:35)
+[10472073ms] The play() request was interrupted by a new load request. https://goo.gl/LdLk22
+[12705915ms] [WARNING] src/demo/index.js
+  Line 5:10:  'followingSongUrl' is defined but never used  no-unused-vars
+  Line 5:28:  'openWarmer' is defined but never used        no-unused-vars
+  Line 5:40:  'warmAfterStart' is defined but never used    no-unused-vars
+
+src/store/actions/setAudio.js
+  Line 3:44:  'followingSongUrl' is defined but never used  no-unused-vars
+  Line 3:62:  'warmAfterStart' is defined but never used    no-unused-vars @ http://localhost:3000/static/js/vendors~main.chunk.js:12687
+[14355571ms] [INFO] The development server has disconnected.
+Refresh the page if necessary. @ http://localhost:3000/static/js/vendors~main.chunk.js:12632
+[25112105ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:42608
+[25281726ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:42608
+[25804287ms] [INFO] The development server has disconnected.
+Refresh the page if necessary. @ http://localhost:3000/static/js/vendors~main.chunk.js:9402
+[26126233ms] [LOG] [HMR] Waiting for update signal from WDS... @ http://localhost:3000/static/js/vendors~main.chunk.js:42608

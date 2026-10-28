@@ -5,8 +5,8 @@ import './AudioPlayer.scss'
 import SongInfo from './SongInfo/SongInfo'
 import AudioControls from './AudioControls/AudioControls'
 import AudioProgress from './AudioProgress/AudioProgress'
-import isEqual from 'lodash/isEqual'
-import { testCond } from './utils/objectUtils'
+import { objectHasProps } from './utils/objectUtils'
+import { ensureAudioElement } from './utils/audioStream'
 
 export const exportProps = {
   onToggle: () => {},
@@ -21,40 +21,41 @@ class AudioPlayer extends Component {
 
     const {onSongChanged} = this.props
     if (onSongChanged) exportProps.onSongChanged = onSongChanged
+    const audio = ensureAudioElement()
+    audio.ontimeupdate = () => store.setProgress().set()
+    store.setAudio().setElement()
   }
 
   componentDidUpdate(prevProps) {
-    this.onPlaylistChanged(prevProps)
-  }
+    const { onToggle, onSongChanged } = this.props
+    if (onToggle) exportProps.onToggle = onToggle
+    if (onSongChanged) exportProps.onSongChanged = onSongChanged
 
-  onPlaylistChanged = (prevProps, testConfig = {}) => {
-    if (
-      testCond(
-        testConfig,
-        'ifBool',
-        !isEqual(prevProps.currentPlayList, this.props.currentPlayList)
-      )
-    ) {
+    const playlistChanged = prevProps.currentPlayList !== this.props.currentPlayList
+    const indexChanged = prevProps.activeSongIndex !== this.props.activeSongIndex
+
+    if (playlistChanged && objectHasProps(this.props.currentPlayList)) {
+      store.startIndex = Number.isInteger(this.props.activeSongIndex) ? this.props.activeSongIndex : 0
       store.setAudio().setPlaylist(this.props.currentPlayList)
+      return
+    }
+
+    if (
+      indexChanged &&
+      Number.isInteger(this.props.activeSongIndex) &&
+      store.songAndPlaylistAreSetted &&
+      store.state.currentSong.arrIndex !== this.props.activeSongIndex
+    ) {
+      store.setControls().skipSong({ to: this.props.activeSongIndex })
     }
   }
 
   render() {
     const SongInfoComponent = store.canPlay && <SongInfo />
-    const AudioElement = (
-      <audio
-        id="audio"
-        onTimeUpdate={() => store.setProgress().set()}
-        preload="auto"
-      >
-        <source src={store.state.currentSong.songUrl} type="audio/mp3" />
-      </audio>
-    )
 
     return (
       <div className={'audio'}>
         <div id="audio__player" className={'audio__player'}>
-          {AudioElement}
           <div className={'audio__controls'}>
             {SongInfoComponent}
             <div className={'group'}>

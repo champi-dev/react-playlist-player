@@ -9,16 +9,17 @@
 
 html {
   font-size: 100%;
-  @media screen and (min-width: $mediumBreakPoint) {
-    font-size: 115%;
-  }
+  background: $bg-primary;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  background: $bg-primary;
+  color: $text;
+  font-family: $font;
   font-weight: 400;
+  letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

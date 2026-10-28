@@ -13,21 +13,18 @@
   }
 
   &__level {
-    width: 4rem;
+    width: 4.5rem;
     height: 4px;
-    border-radius: 4px;
-    background-color: lighten($bg-primary, 15%);
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.16);
     display: inline-block;
     vertical-align: middle;
-    &:hover {
-      .audio-volume__fill {
-        background-color: $primary;
-      }        
-    }      
   }
-  
+
   &__fill {
     @include bar-fill;
+    background-color: #fff;
+    border-radius: 999px;
   }    
   
   .icon {

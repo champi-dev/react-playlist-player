@@ -1,29 +1,32 @@
 @import "./styles/_variables.scss";
-$player-bg: lighten($bg-primary, 5%);
 
 .audio__player {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: $player-bg;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 3;
+  width: auto;
+  padding: 0.7rem 0.95rem 0.8rem;
+  border-radius: 22px;
+  background: rgba(28, 28, 30, 0.78);
+  border: 1px solid $border;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  backdrop-filter: saturate(180%) blur(24px);
 
   & .audio__controls {
     position: relative;
-    height: 2.5rem;
-    @media screen and (min-width: $mediumBreakPoint) {
-      height: 5rem;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    height: auto;
   }
 
   & .group {
-    @media screen and (min-width: $mediumBreakPoint) {
-      position: absolute;
-      width: 100%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
+    position: static;
+    width: 100%;
+    transform: none;
 
     & .play,
     & .pause {
